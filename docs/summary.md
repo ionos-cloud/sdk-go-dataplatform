@@ -31,3 +31,4 @@
 * [PatchNodePoolProperties](models/PatchNodePoolProperties.md)
 * [PatchNodePoolRequest](models/PatchNodePoolRequest.md)
 * [StorageType](models/StorageType.md)
+* [VersionsGet200Response](models/VersionsGet200Response.md)

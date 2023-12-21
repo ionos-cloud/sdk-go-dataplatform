@@ -37,12 +37,12 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
-    nodepoolId := TODO // string | The unique ID of the node pool. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
+    nodepoolId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the node pool. Must conform to the UUID format. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
-    resource, resp, err := apiClient.DataPlatformNodePoolApi.ClustersNodepoolsDelete(context.Background(), clusterId, nodepoolId).Execute()
+    resp, err := apiClient.DataPlatformNodePoolApi.ClustersNodepoolsDelete(context.Background(), clusterId, nodepoolId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DataPlatformNodePoolApi.ClustersNodepoolsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", resp)
@@ -58,8 +58,8 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
-|**nodepoolId** | [**string**](../models/.md) | The unique ID of the node pool. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**nodepoolId** | **string** | The unique ID of the node pool. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -78,6 +78,22 @@ Other parameters are passed through a pointer to an apiClustersNodepoolsDeleteRe
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformNodePoolApiService.ClustersNodepoolsDelete"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsDelete": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsDelete": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersNodepoolsFindById
@@ -105,8 +121,8 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
-    nodepoolId := TODO // string | The unique ID of the node pool. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
+    nodepoolId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the node pool. Must conform to the UUID format. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -126,8 +142,8 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
-|**nodepoolId** | [**string**](../models/.md) | The unique ID of the node pool. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**nodepoolId** | **string** | The unique ID of the node pool. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -146,6 +162,22 @@ Other parameters are passed through a pointer to an apiClustersNodepoolsFindById
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformNodePoolApiService.ClustersNodepoolsFindById"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsFindById": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsFindById": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersNodepoolsGet
@@ -173,7 +205,7 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -193,7 +225,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -212,6 +244,22 @@ Other parameters are passed through a pointer to an apiClustersNodepoolsGetReque
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformNodePoolApiService.ClustersNodepoolsGet"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsGet": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsGet": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersNodepoolsPatch
@@ -240,8 +288,8 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
-    nodepoolId := TODO // string | The unique ID of the node pool. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
+    nodepoolId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the node pool. Must conform to the UUID format. 
     patchNodePoolRequest := *openapiclient.NewPatchNodePoolRequest(*openapiclient.NewPatchNodePoolProperties()) // PatchNodePoolRequest | Request payload with the properties that shall be applied to an existing DataPlatformNodePool. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
@@ -262,8 +310,8 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
-|**nodepoolId** | [**string**](../models/.md) | The unique ID of the node pool. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**nodepoolId** | **string** | The unique ID of the node pool. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -283,6 +331,22 @@ Other parameters are passed through a pointer to an apiClustersNodepoolsPatchReq
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformNodePoolApiService.ClustersNodepoolsPatch"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsPatch": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsPatch": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersNodepoolsPost
@@ -311,7 +375,7 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
     createNodePoolRequest := *openapiclient.NewCreateNodePoolRequest(*openapiclient.NewCreateNodePoolProperties("my-node-pool", int32(2))) // CreateNodePoolRequest | Request payload with the properties that defines a DataPlatformNodePool. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
@@ -332,7 +396,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -352,4 +416,20 @@ Other parameters are passed through a pointer to an apiClustersNodepoolsPostRequ
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformNodePoolApiService.ClustersNodepoolsPost"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsPost": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformNodePoolApiService.ClustersNodepoolsPost": {
+    "port": "8443",
+},
+})
+```
 

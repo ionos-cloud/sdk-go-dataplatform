@@ -38,11 +38,11 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
-    resource, resp, err := apiClient.DataPlatformClusterApi.ClustersDelete(context.Background(), clusterId).Execute()
+    resp, err := apiClient.DataPlatformClusterApi.ClustersDelete(context.Background(), clusterId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DataPlatformClusterApi.ClustersDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", resp)
@@ -58,7 +58,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -77,6 +77,22 @@ Other parameters are passed through a pointer to an apiClustersDeleteRequest str
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformClusterApiService.ClustersDelete"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformClusterApiService.ClustersDelete": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformClusterApiService.ClustersDelete": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersFindById
@@ -104,7 +120,7 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -124,7 +140,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -143,6 +159,22 @@ Other parameters are passed through a pointer to an apiClustersFindByIdRequest s
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformClusterApiService.ClustersFindById"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformClusterApiService.ClustersFindById": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformClusterApiService.ClustersFindById": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersGet
@@ -171,7 +203,7 @@ import (
 )
 
 func main() {
-    name := "name_example" // string | Response filter to list only the clusters which include the specified name. The value is case insensitive and matched on the `name` property of the cluster. The input is limited to 63 characters with alphanumeric characters ([a-z0-9A-Z]), dashes (-), underscores (_), and dots (.) allowed.  (optional)
+    name := "name_example" // string | Response filter to list only the clusters which include the specified name. The value is case insensitive and matched on the `name` property of the cluster. The input is limited to 63 characters with alphanumeric characters (`[a-z0-9A-Z]`), dashes (`-`), underscores (`_`), and dots (`.`) allowed.  (optional)
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -196,7 +228,7 @@ Other parameters are passed through a pointer to an apiClustersGetRequest struct
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **name** | **string** | Response filter to list only the clusters which include the specified name. The value is case insensitive and matched on the &#x60;name&#x60; property of the cluster. The input is limited to 63 characters with alphanumeric characters ([a-z0-9A-Z]), dashes (-), underscores (_), and dots (.) allowed.  | |
+| **name** | **string** | Response filter to list only the clusters which include the specified name. The value is case insensitive and matched on the &#x60;name&#x60; property of the cluster. The input is limited to 63 characters with alphanumeric characters (&#x60;[a-z0-9A-Z]&#x60;), dashes (&#x60;-&#x60;), underscores (&#x60;_&#x60;), and dots (&#x60;.&#x60;) allowed.  | |
 
 ### Return type
 
@@ -207,6 +239,22 @@ Other parameters are passed through a pointer to an apiClustersGetRequest struct
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformClusterApiService.ClustersGet"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformClusterApiService.ClustersGet": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformClusterApiService.ClustersGet": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersKubeconfigFindByClusterId
@@ -234,7 +282,7 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -254,7 +302,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -273,6 +321,22 @@ Other parameters are passed through a pointer to an apiClustersKubeconfigFindByC
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformClusterApiService.ClustersKubeconfigFindByClusterId"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformClusterApiService.ClustersKubeconfigFindByClusterId": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformClusterApiService.ClustersKubeconfigFindByClusterId": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersPatch
@@ -301,7 +365,7 @@ import (
 )
 
 func main() {
-    clusterId := TODO // string | The unique ID of the cluster. Must conform to the UUID format. 
+    clusterId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the cluster. Must conform to the UUID format. 
     patchClusterRequest := *openapiclient.NewPatchClusterRequest(*openapiclient.NewPatchClusterProperties()) // PatchClusterRequest | Request payload with the properties that shall be applied to an existing DataPlatformCluster. 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
@@ -322,7 +386,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**clusterId** | [**string**](../models/.md) | The unique ID of the cluster. Must conform to the UUID format.  | |
+|**clusterId** | **string** | The unique ID of the cluster. Must conform to the UUID format.  | |
 
 ### Other Parameters
 
@@ -342,6 +406,22 @@ Other parameters are passed through a pointer to an apiClustersPatchRequest stru
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformClusterApiService.ClustersPatch"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformClusterApiService.ClustersPatch": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformClusterApiService.ClustersPatch": {
+    "port": "8443",
+},
+})
+```
 
 
 ## ClustersPost
@@ -406,4 +486,20 @@ Other parameters are passed through a pointer to an apiClustersPostRequest struc
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformClusterApiService.ClustersPost"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformClusterApiService.ClustersPost": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformClusterApiService.ClustersPost": {
+    "port": "8443",
+},
+})
+```
 

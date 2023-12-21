@@ -11,7 +11,7 @@ All URIs are relative to *https://api.ionos.com/dataplatform*
 ## VersionsGet
 
 ```go
-var result []string = VersionsGet(ctx)
+var result VersionsGet200Response = VersionsGet(ctx)
                       .Execute()
 ```
 
@@ -41,7 +41,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DataPlatformMetaDataApi.VersionsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", resp)
     }
-    // response from `VersionsGet`: []string
+    // response from `VersionsGet`: VersionsGet200Response
     fmt.Fprintf(os.Stdout, "Response from `DataPlatformMetaDataApi.VersionsGet`: %v\n", resource)
 }
 ```
@@ -57,11 +57,27 @@ Other parameters are passed through a pointer to an apiVersionsGetRequest struct
 
 ### Return type
 
-**[]string**
+[**VersionsGet200Response**](../models/VersionsGet200Response.md)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"DataPlatformMetaDataApiService.VersionsGet"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "DataPlatformMetaDataApiService.VersionsGet": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "DataPlatformMetaDataApiService.VersionsGet": {
+    "port": "8443",
+},
+})
+```
 
