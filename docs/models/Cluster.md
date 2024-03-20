@@ -8,6 +8,7 @@
 |**DataPlatformVersion** | Pointer to **string** | The version of the data platform.  | [optional] |
 |**DatacenterId** | Pointer to **string** | The UUID of the virtual data center (VDC) the cluster is provisioned.  | [optional] |
 |**MaintenanceWindow** | Pointer to [**MaintenanceWindow**](MaintenanceWindow.md) |  | [optional] |
+|**Lans** | Pointer to [**[]Lan**](Lan.md) | A list of LANs you want this node pool to be part of.  | [optional] |
 
 ## Methods
 
@@ -127,5 +128,30 @@ SetMaintenanceWindow sets MaintenanceWindow field to given value.
 `func (o *Cluster) HasMaintenanceWindow() bool`
 
 HasMaintenanceWindow returns a boolean if a field has been set.
+
+### GetLans
+
+`func (o *Cluster) GetLans() []Lan`
+
+GetLans returns the Lans field if non-nil, zero value otherwise.
+
+### GetLansOk
+
+`func (o *Cluster) GetLansOk() (*[]Lan, bool)`
+
+GetLansOk returns a tuple with the Lans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLans
+
+`func (o *Cluster) SetLans(v []Lan)`
+
+SetLans sets Lans field to given value.
+
+### HasLans
+
+`func (o *Cluster) HasLans() bool`
+
+HasLans returns a boolean if a field has been set.
 
 
