@@ -50,7 +50,7 @@ const (
 	RequestStatusFailed  = "FAILED"
 	RequestStatusDone    = "DONE"
 
-	Version = "1.0.3"
+	Version = "1.1.0"
 )
 
 // APIClient manages communication with the IONOS Cloud - Managed Stackable Data Platform API API v1.1.0
