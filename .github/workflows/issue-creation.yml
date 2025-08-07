@@ -1,0 +1,81 @@
+name: Issue Creation Tracker
+on:
+  issues:
+    types: [ opened, reopened ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Issue Details
+        env:
+          ISSUE_CREATOR: ${{ github.event.issue.user.login }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          echo "Issue creator: $ISSUE_CREATOR"
+          echo "Issue title: $ISSUE_TITLE"
+          echo "Issue number: $ISSUE_NUMBER"
+          echo "Issue url: $ISSUE_URL"
+
+      - name: Google Chat Notification
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          REPOSITORY: ${{ github.repository }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name) }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_TRACKER_WEBHOOK: ${{ secrets.ISSUE_TRACKER_WEBHOOK }}
+        run: |
+          curl --location --request POST "$ISSUE_TRACKER_WEBHOOK" \
+          --header 'Content-Type: application/json' \
+          --data-raw "{
+            \"cards\": [
+              {
+                \"header\": {
+                  \"title\": \"New Issue 🔨\",
+                  \"subtitle\": \"Issue No: #$ISSUE_NUMBER\"
+                },
+                \"sections\": [
+                  {
+                    \"widgets\": [
+                      {
+                        \"keyValue\": {
+                          \"topLabel\": \"Repository\",
+                          \"content\": \"$REPOSITORY\"
+                        }
+                      },
+                      {
+                        \"keyValue\": {
+                          \"topLabel\": \"Title\",
+                          \"content\": \"$ISSUE_TITLE\"
+                        }
+                      },
+                      {
+                        \"keyValue\": {
+                          \"topLabel\": \"Assigned Labels\",
+                          \"content\": \"$ISSUE_LABELS\"
+                        }
+                      },
+                      {
+                        \"buttons\": [
+                          {
+                            \"textButton\": {
+                              \"text\": \"OPEN ISSUE\",
+                              \"onClick\": {
+                                \"openLink\": {
+                                  \"url\": \"$ISSUE_URL\"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }"
